@@ -1,0 +1,67 @@
+﻿  正在验证源
+  正在将源远程复制到“192.168.235.130”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  Server.c
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(39,25): warning : passing argument 2 of ‘bind’ from incompatible pointer type [-Wincompatible-pointer-types]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(39,25): warning :    39 |         ret = bind(lfd, (struct socketaddr*)&addr, sizeof(addr));
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(39,25): warning :       |                         ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(39,25): warning :       |                         |
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(39,25): warning :       |                         struct socketaddr *
+/usr/include/x86_64-linux-gnu/sys/socket.h(112,49): message : expected ‘const struct sockaddr *’ but argument is of type ‘struct socketaddr *’
+/usr/include/x86_64-linux-gnu/sys/socket.h(112,49): message :   112 | extern int bind (int __fd, __CONST_SOCKADDR_ARG __addr, socklen_t __len)
+/usr/include/x86_64-linux-gnu/sys/socket.h(112,49): message :       |                                                 ^
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(122,23): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(122,23): warning :   122 |         while ((len = recv(cfd, tmp, sizeof tmp, 0)) > 0) {
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(122,23): warning :       |                       ^~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(124,50): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(124,50): warning :   124 |                         memcpy(buf + totle, tmp, len);
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(124,50): warning :       |                                                  ^~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(134,30): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(134,30): warning :   134 |                 int reqLen = pt - buf;
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(134,30): warning :       |                              ^~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(188,66): warning : conversion from ‘__off_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(188,66): warning :   188 |                 sendHeadMsg(cfd, 200, "OK", getFileType(file), st.st_size);
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(188,66): warning :       |                                                                ~~^~~~~~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(202,20): warning : conversion from ‘__off_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(202,20): warning :   202 |         int size = lseek(fd, 0, SEEK_END);
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(202,20): warning :       |                    ^~~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(203,33): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(203,33): warning :   203 |         sendfile(cfd, fd, NULL, size);
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(203,33): warning :       |                                 ^~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(212,22): warning : passing argument 2 of ‘sprintf’ makes pointer from integer without a cast [-Wint-conversion]
+/usr/include/stdio.h(359,44): message : expected ‘const char * restrict’ but argument is of type ‘size_t’ {aka ‘long unsigned int’}
+/usr/include/stdio.h(359,44): message :   359 |                     const char *__restrict __format, ...) __THROWNL;
+/usr/include/stdio.h(359,44): message :       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(213,22): warning : passing argument 2 of ‘sprintf’ makes pointer from integer without a cast [-Wint-conversion]
+/usr/include/stdio.h(359,44): message : expected ‘const char * restrict’ but argument is of type ‘size_t’ {aka ‘long unsigned int’}
+/usr/include/stdio.h(359,44): message :   359 |                     const char *__restrict __format, ...) __THROWNL;
+/usr/include/stdio.h(359,44): message :       |                     ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(220,41): warning : passing argument 2 of ‘strrchr’ makes integer from pointer without a cast [-Wint-conversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(220,41): warning :   220 |         const char* dot = strrchr(name, ".");
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(220,41): warning :       |                                         ^~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(220,41): warning :       |                                         |
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(220,41): warning :       |                                         char *
+/usr/include/string.h(273,44): message : expected ‘int’ but argument is of type ‘char *’
+/usr/include/string.h(273,44): message :   273 | extern char *strrchr (const char *__s, int __c)
+/usr/include/string.h(273,44): message :       |                                        ~~~~^~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(223,61): warning : passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(223,61): warning :   223 |         if (strcmp(dot, ".html") == 0 || strcmp(dot, ".htm" == 0))
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(223,61): warning :       |                                                      ~~~~~~~^~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(223,61): warning :       |                                                             |
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(223,61): warning :       |                                                             int
+/usr/include/string.h(156,50): message : expected ‘const char *’ but argument is of type ‘int’
+/usr/include/string.h(156,50): message :   156 | extern int strcmp (const char *__s1, const char *__s2)
+/usr/include/string.h(156,50): message :       |                                      ~~~~~~~~~~~~^~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(225,61): warning : passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [-Wint-conversion]
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(225,61): warning :   225 |         if (strcmp(dot, ".jpg") == 0 || strcmp(dot, ".jpeg" == 0))
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(225,61): warning :       |                                                     ~~~~~~~~^~~~
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(225,61): warning :       |                                                             |
+E:\c++项目\SimpleHttp\SimpleHttp\Server.c(225,61): warning :       |                                                             int
+/usr/include/string.h(156,50): message : expected ‘const char *’ but argument is of type ‘int’
+/usr/include/string.h(156,50): message :   156 | extern int strcmp (const char *__s1, const char *__s2)
+/usr/include/string.h(156,50): message :       |                                      ~~~~~~~~~~~~^~~~
+  正在链接对象
+  SimpleHttp.vcxproj -> E:\c++项目\SimpleHttp\SimpleHttp\bin\x64\Debug\SimpleHttp.out
